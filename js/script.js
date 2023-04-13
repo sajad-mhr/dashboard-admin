@@ -28,7 +28,7 @@ const monthShams = [
   "اسفند",
 ];
 
-const dataChart = [0,90,0,90,0,90,0,90,0,90,0,90];
+const dataChart = [0, 90, 0, 90, 0, 90, 0, 90, 0, 90, 0, 90];
 
 function makeChart(
   elem,
@@ -49,22 +49,17 @@ function makeChart(
         scrollPositionX: -1,
       },
       backgroundColor: backgroundColor,
-      plotBorderColor: '#9E9E9E',
+      plotBorderColor: "#9E9E9E",
       plotBorderWidth: 2,
     },
-    credits:{
-      enabled:false
+    credits: {
+      enabled: false,
     },
     title: {
       text: title,
       style: {
         color: textColor,
       },
-      labels:{
-        style:{
-          color:textColor
-        }
-      }
     },
     xAxis: {
       categories: xAxisCategories,
@@ -77,9 +72,9 @@ function makeChart(
     yAxis: {
       title: {
         text: yAxisTitle,
-        style:{
-          color:textColor
-        }
+        style: {
+          color: textColor,
+        },
       },
       labels: {
         style: {
@@ -87,6 +82,7 @@ function makeChart(
         },
       },
     },
+
     series: [
       {
         name: seriesName,
@@ -94,11 +90,16 @@ function makeChart(
         color: "#00acee",
         style: {
           color: textColor,
+          
         },
-        
-
       },
     ],
+    legend: {
+      itemStyle: {
+        color: textColor,
+        fontWeight:100
+      },
+    },
   });
 }
 
