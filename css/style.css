@@ -3,11 +3,35 @@
   src: url("../assets/fonts/Vazir.ttf");
 }
 
-:root{
-  --background-light:#e4e9f7;
-  --background-dark:#2a2b2e;
+:root {
+  --background-light: #e4e9f7;
+  --background-dark: #2a2b2e;
   --color-default: #00acee;
   --color-second: #0067ac;
+
+  --card-view-color_1: #17a2b8;
+  --card-view-color_2: #45e5fe;
+
+  --card-product-count-color_1: #28a745;
+  --card-product-count-color_2: #44fa6e;
+
+  --card-comments-count-color_1: #a70a19;
+  --card-comments-count-color_2: #e94858;
+
+  --card-costumer-count-color_1: #ff6f00;
+  --card-costumer-count-color_2: #ffd100;
+
+  --card-view-color_1-dark-mode: #17a3b886;
+  --card-view-color_2-dark-mode: #45e5fecb;
+
+  --card-product-count-color_1-dark-mode: #28a74693;
+  --card-product-count-color_2-dark-mode: #44fa6ee7;
+
+  --card-comments-count-color_1-dark-mode: #a70a1a88;
+  --card-comments-count-color_2-dark-mode: #e94858e5;
+
+  --card-costumer-count-color_1-dark-mode: #ff6f0091;
+  --card-costumer-count-color_2-dark-mode: #ffd000dc;
 }
 
 * {
@@ -29,7 +53,6 @@ body::-webkit-scrollbar {
 /* Track */
 body::-webkit-scrollbar-track {
   background: #c8dce9;
-
 }
 
 /* Handle */
@@ -174,7 +197,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .sidebar i {
-  color:#fff;
+  color: #fff;
   height: 60px;
   line-height: 60px;
   min-width: 50px;
@@ -193,6 +216,10 @@ body::-webkit-scrollbar-thumb:hover {
   position: relative;
   margin: 8px 0;
   list-style: none;
+}
+
+.sidebar > .nav-list > li > a {
+  transition: 0.3s ease-in-out;
 }
 
 .sidebar > .nav-list > li > a:hover {
@@ -284,11 +311,44 @@ body::-webkit-scrollbar-thumb:hover {
 } */
 
 .review-card {
-  background-color: #e0e0e0;
   margin: 10px 0 10px 0;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+#view-card .review-card {
+  background: var(--card-view-color_1);
+  background: linear-gradient(
+    30deg,
+    var(--card-view-color_1) 0%,
+    var(--card-view-color_2) 100%
+  );
+}
+#product-count-card .review-card {
+  background: var(--card-product-count-color_1);
+  background: linear-gradient(
+    30deg,
+    var(--card-product-count-color_1) 0%,
+    var(--card-product-count-color_2) 100%
+  );
+}
+#commnets-card .review-card {
+  background: var(--card-comments-count-color_1);
+  background: linear-gradient(
+    30deg,
+    var(--card-comments-count-color_1) 0%,
+    var(--card-comments-count-color_2) 100%
+  );
+}
+#cusomers-card .review-card {
+  background: var(--card-costumer-count-color_1);
+  background: linear-gradient(
+    30deg,
+    var(--card-costumer-count-color_1) 0%,
+    var(--card-costumer-count-color_2) 100%
+  );
 }
 
 .review-card > .review-details {
@@ -297,35 +357,35 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: flex-end;
 }
 .review-card > .review-details i {
-  font-size: max(5vmax, 60px);
+  font-size: max(4.5vmax, 50px);
   display: flex;
   margin-left: 5px;
 }
 .review-card > .review-details span {
-  font-size: max(4vmax, 50px);
+  font-size: max(3vmax, 50px);
   margin-left: 10px;
   display: flex;
   margin-top: 10px;
 }
 .review-card > .review-title span {
-  font-size: max(2.5vmax, 25px);
+  font-size: max(1.5vmax, 25px);
 }
 
-#my-chart,#chart-review {
+#my-chart,
+#chart-review {
   width: 100%;
   height: 400px;
   border: 2px solid #fff;
 }
 
-
-.table-card{
+.table-card {
   background-color: #fff;
   max-height: 400px;
   padding: 10px 20px 0 20px;
 }
 
-.table-card span{
-  font-size: max(2vmax,25px);
+.table-card span {
+  font-size: max(2vmax, 25px);
   font-weight: bold;
 }
 
@@ -349,28 +409,76 @@ body::-webkit-scrollbar-thumb:hover {
   background: rgb(5, 32, 116);
 }
 
-
-.theme-dark .home-section{
+.theme-dark .home-section {
   background-color: var(--background-dark);
   transition: 0.3s;
 }
 
 .theme-dark .review-card i {
-  color: var(--background-dark);
+  color: #fff;
 }
 .theme-dark .review-card span {
-  color: var(--background-dark);
+  color: #fff;
 }
 
-.theme-dark .sidebar li a .link_name{
-  color: var(--background-dark);
+.theme-dark #view-card .review-card {
+  background: var(--card-view-color_1-dark-mode);
+  background: linear-gradient(
+    30deg,
+    var(--card-view-color_1-dark-mode) 0%,
+    var(--card-view-color_2-dark-mode) 100%
+  );
 }
-.theme-dark .sidebar i{
-  color: var(--background-dark);
+.theme-dark #product-count-card .review-card {
+  background: var(--card-product-count-color_1-dark-mode);
+  background: linear-gradient(
+    30deg,
+    var(--card-product-count-color_1-dark-mode) 0%,
+    var(--card-product-count-color_2-dark-mode) 100%
+  );
+}
+.theme-dark #commnets-card .review-card {
+  background: var(--card-comments-count-color_1-dark-mode);
+  background: linear-gradient(
+    30deg,
+    var(--card-comments-count-color_1-dark-mode) 0%,
+    var(--card-comments-count-color_2-dark-mode) 100%
+  );
+}
+.theme-dark #cusomers-card .review-card {
+  background: var(--card-costumer-count-color_1-dark-mode);
+  background: linear-gradient(
+    30deg,
+    var(--card-costumer-count-color_1-dark-mode) 0%,
+    var(--card-costumer-count-color_2-dark-mode) 100%
+  );
 }
 
-.theme-dark .sidebar .logo_details .logo_name{
-  color: var(--background-dark);
+.theme-dark .sidebar li a .link_name {
+  color: #fff;
+}
+
+.theme-dark .sidebar {
+  background-color: #0067ac;
+}
+
+.theme-dark .sidebar li a {
+  background-color: #0067ac;
+}
+.theme-dark .sidebar li a:hover {
+  background-color: #004e81;
+}
+
+.theme-dark .sidebar > .nav-list > li > a.active-side {
+  background-color: #004e81;
+}
+
+.theme-dark .sidebar i {
+  color: #fff;
+}
+
+.theme-dark .sidebar .logo_details .logo_name {
+  color: #fff;
 }
 
 .theme-dark .sidebar li .tooltip {
@@ -379,27 +487,25 @@ body::-webkit-scrollbar-thumb:hover {
   border: 1px solid rgb(156, 156, 156);
 }
 
-
-.theme-dark .dashboard-navbar{
-  color: var(--background-dark);
+.theme-dark .dashboard-navbar {
+  color: #fff;
+  background-color: #0067ac;
 }
 
-.theme-dark .table-card{
-  background-color:var(--background-dark);
-  border: 1px solid rgb(155, 155, 155) ;
+.theme-dark .table-card {
+  background-color: var(--background-dark);
+  border: 1px solid rgb(155, 155, 155);
 }
-.theme-dark .table-card span{
+.theme-dark .table-card span {
   color: #fff;
 }
-.theme-dark .table-card table{
+.theme-dark .table-card table {
   color: #fff;
 }
-
-
 
 @media screen and (max-width: 425px) {
-  #my-chart,#chart-review {
+  #my-chart,
+  #chart-review {
     height: 250px;
   }
 }
-
