@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>داشبورد</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./bootstrap/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="./bootstrap/icons/bootstrap-icons.css" />
+  </head>
+  <body>
+    <nav class="dashboard-navbar">
+      <div class="left-navbar">
+        <div class="switch-theme">
+          <i class="bi-sun-fill" style="color:rgb(255, 208, 0);"></i>
+          <div
+            class="form-check form-switch"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: max(1.8vmax, 20px);
+            "
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="switch-theme"
+            />
+          </div>
+          <i class="bi-moon-fill" style="color: gray;"></i>
+        </div>
+        <div class="notification-icon">
+          <span
+            class="position-absolute bg-danger border border-light rounded-circle"
+            style="top: -2px; right: 0; padding: max(0.5vmin, 3px)"
+          >
+            <span class="visually-hidden">New alerts</span>
+          </span>
+          <i class="bi-bell-fill"></i>
+        </div>
+        <div class="avatar-profile">
+          <img src="./assets/images/profile.jpeg" alt="" />
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebar">
+      <div class="logo_details">
+        <span class="logo_name">فروشگاه ممد</span>
+        <i class="bi-list" id="btn-open-sidebar"></i>
+      </div>
+      <ul class="nav-list" style="padding-right: 0">
+        <li>
+          <a href="#" class="active-side">
+            <i class="bi-columns-gap"></i>
+            <span class="link_name">داشبورد</span>
+          </a>
+          <span class="tooltip">داشبورد</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi-basket-fill"></i>
+            <span class="link_name">محصولات</span>
+          </a>
+          <span class="tooltip">محصولات</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi-newspaper"></i>
+            <span class="link_name">نوشته ها</span>
+          </a>
+          <span class="tooltip">نوشته ها</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi-people-fill"></i>
+            <span class="link_name">مشتریان ویژه</span>
+          </a>
+          <span class="tooltip">مشتریان ویژه</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi-box-arrow-in-right"></i>
+            <span class="link_name">خروج</span>
+          </a>
+          <span class="tooltip">خروج</span>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section">
+      <br>
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-6 col-sm-6 r-card"
+          >
+            <div class="review-card" style="background-color: #17a2b8;color: #fff;">
+              <div class="review-details">
+                <span>2040</span>
+                <i class="bi-eye-fill"></i>
+              </div>
+              <div class="review-title">
+                <span>بازدید از سایت</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 col-sm-6 r-card"
+          >
+            <div class="review-card" style="background-color: #28a745;color: #fff;">
+              <div class="review-details">
+                <span>2040</span>
+                <i class="bi-cart-fill"></i>
+              </div>
+              <div class="review-title">
+                <span>تعداد محصولات</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 col-sm-6 r-card"
+          >
+            <div class="review-card" style="background-color: #dc3545;color: #fff;">
+              <div class="review-details">
+                <span>2040</span>
+                <i class="bi-chat-right-fill"></i>
+              </div>
+              <div class="review-title">
+                <span>تعداد نظرات</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 col-sm-6 r-card"
+          >
+            <div class="review-card" style="background-color: #ffae00;color: #fff;">
+              <div class="review-details">
+                <span>2040</span>
+                <i class="bi-people-fill"></i>
+              </div>
+              <div class="review-title">
+                <span>تعداد مشتریان</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+     <div id="chart-container" class="container">
+      <div id="my-chart"></div>
+     </div>
+     <br>
+     <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div id="chart-review"></div>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+           <!-- <div id="my-chart"></div> -->
+           <div class="table-card">
+            <span>مشتریان جدید</span>
+            <table class="table table-responsive text-center">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">عکس</th>
+                  <th scope="col">نام</th>
+                  <th scope="col">نام کاربری</th>
+                  <th scope="col">ایمیل</th>
+                  <th scope="col">تاریخ ثبت نام</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <img src="./assets/images/profile.jpeg" width="40" height="40" alt="">
+                  </td>
+                  <td>غلامرضا</td>
+                  <td>@gholam</td>
+                  <td>gholam@gmail.com</td>
+                  <td>1401/12/27</td>
+                </tr>
+              </tbody>
+            </table>
+           </div>
+        </div>
+      </div>
+     </div>
+     <br>
+    </section>
+
+   
+
+
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="./jQuery/jquery.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
