@@ -34,14 +34,14 @@ const dataChart = [0, 90, 0, 90, 0, 90, 0, 90, 0, 90, 0, 90];
 
 const costumers = [
   { id: 1, name: "غلام", email: "gholam@gmail.com", phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 },
   {
     id: 2,
     name: "غلامرضا",
     email: "gholamreza@gmail.com",
     phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 
   },
   {
@@ -49,7 +49,7 @@ avatar:"../assets/images/profile.jpeg"
     name: "غلام حسین",
     email: "gholamhossein@gmail.com",
     phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 
   },
   {
@@ -57,7 +57,7 @@ avatar:"../assets/images/profile.jpeg"
     name: "غلام حسن",
     email: "gholamhasan@gmail.com",
     phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 
   },
   {
@@ -65,7 +65,7 @@ avatar:"../assets/images/profile.jpeg"
     name: "نعیم مولایی",
     email: "naeemmolaei@gmail.com",
     phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 
   },
   {
@@ -73,7 +73,7 @@ avatar:"../assets/images/profile.jpeg"
     name: "نریمان غلامی",
     email: "narimangholami@gmail.com",
     phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 
   },
   {
@@ -81,7 +81,7 @@ avatar:"../assets/images/profile.jpeg"
     name: "رضا پروانه",
     email: "rezaparvane@gmail.com",
     phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 
   },
   {
@@ -89,7 +89,7 @@ avatar:"../assets/images/profile.jpeg"
     name: "ساحل مولایی",
     email: "sahelmolaei@gmail.com",
     phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 
   },
   {
@@ -97,7 +97,7 @@ avatar:"../assets/images/profile.jpeg"
     name: "محب مشکات",
     email: "mohebmeshkat@gmail.com",
     phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 
   },
   {
@@ -105,7 +105,7 @@ avatar:"../assets/images/profile.jpeg"
     name: "منصور باجلان",
     email: "mansorbajelan@gmail.com",
     phoneNumber: "0930-441-9522",
-avatar:"../assets/images/profile.jpeg"
+avatar:"assets/images/profile.jpeg"
 
   },
 ];
@@ -136,7 +136,7 @@ function showCostumers(costumersData){
   });
 }
 
-showCostumers(costumers)
+
 
 function makeChart(
   elem,
@@ -219,6 +219,7 @@ if (checkTheme === "dark") {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  showCostumers(costumers)
   setTimeout(() => {
     $(".loading-container").addClass("hide-loading");
     if ($(".loading-container").hasClass("hide-loading")) {
