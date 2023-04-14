@@ -1,3 +1,5 @@
+window.scrollTo(0, 0);
+
 function sidebarChangeIcon() {
   $(".sidebar").hasClass("open")
     ? $("#btn-open-sidebar").removeClass("bi-list").addClass("bi-chevron-right")
@@ -29,6 +31,112 @@ const monthShams = [
 ];
 
 const dataChart = [0, 90, 0, 90, 0, 90, 0, 90, 0, 90, 0, 90];
+
+const costumers = [
+  { id: 1, name: "غلام", email: "gholam@gmail.com", phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+},
+  {
+    id: 2,
+    name: "غلامرضا",
+    email: "gholamreza@gmail.com",
+    phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+
+  },
+  {
+    id: 3,
+    name: "غلام حسین",
+    email: "gholamhossein@gmail.com",
+    phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+
+  },
+  {
+    id: 4,
+    name: "غلام حسن",
+    email: "gholamhasan@gmail.com",
+    phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+
+  },
+  {
+    id: 5,
+    name: "نعیم مولایی",
+    email: "naeemmolaei@gmail.com",
+    phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+
+  },
+  {
+    id: 6,
+    name: "نریمان غلامی",
+    email: "narimangholami@gmail.com",
+    phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+
+  },
+  {
+    id: 7,
+    name: "رضا پروانه",
+    email: "rezaparvane@gmail.com",
+    phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+
+  },
+  {
+    id: 8,
+    name: "ساحل مولایی",
+    email: "sahelmolaei@gmail.com",
+    phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+
+  },
+  {
+    id: 9,
+    name: "محب مشکات",
+    email: "mohebmeshkat@gmail.com",
+    phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+
+  },
+  {
+    id: 10,
+    name: "منصور باجلان",
+    email: "mansorbajelan@gmail.com",
+    phoneNumber: "0930-441-9522",
+avatar:"../assets/images/profile.jpeg"
+
+  },
+];
+
+function showCostumers(costumersData){
+  let costumer_template = "";
+
+  costumersData.forEach((costumer) => {
+    costumer_template = `
+  <div class="costumer-item">
+     <div style="display: flex;align-items: center;">
+       <div class="costumer-img">
+         <img src=${costumer.avatar} alt="" />
+       </div>
+       <div class="costumer-details">
+         <span class="costumer-name">${costumer.name}</span>
+         <span class="costumer-email">${costumer.email}</span>
+       </div>
+     </div>
+     <div>
+       <a class="costumer-call" href="tel:${costumer.phoneNumber}">
+         <i class="bi-telephone"></i>
+       </a>
+     </div>
+   </div>
+  `;
+  $(".table-items").append(costumer_template)
+  });
+}
+
+showCostumers(costumers)
 
 function makeChart(
   elem,
@@ -90,27 +198,34 @@ function makeChart(
         color: "#00acee",
         style: {
           color: textColor,
-          
         },
       },
     ],
     legend: {
       itemStyle: {
         color: textColor,
-        fontWeight:100
+        fontWeight: 100,
       },
     },
   });
 }
 
+if (checkTheme === "dark") {
+  $("body").addClass("theme-dark");
+  $("#switch-theme").attr("checked", true);
+} else {
+  $("body").removeClass("theme-dark");
+  $("#switch-theme").attr("checked", false);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  if (checkTheme === "dark") {
-    $("body").addClass("theme-dark");
-    $("#switch-theme").attr("checked", true);
-  } else {
-    $("body").removeClass("theme-dark");
-    $("#switch-theme").attr("checked", false);
-  }
+  setTimeout(() => {
+    $(".loading-container").addClass("hide-loading");
+    if ($(".loading-container").hasClass("hide-loading")) {
+      $("body").css("overflow-y", "scroll");
+    }
+  }, 2000);
+
   makeChart(
     "my-chart",
     "spline",
@@ -135,10 +250,10 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
-if ($(".table-card").innerHeight() >= 400) {
-  $(".table-card").css("overflow-y", "scroll");
+if ($(".table-items").innerHeight() >= 351) {
+  $(".table-items").css("overflow-y", "scroll");
 } else {
-  $(".table-card").css("overflow-y", "hidden");
+  $(".table-items").css("overflow-y", "hidden");
 }
 
 $("#switch-theme").on("click", (e) => {
